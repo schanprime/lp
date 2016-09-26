@@ -1,32 +1,72 @@
-
 <!-- saved from url=(0044)http://mob-apps-lp.com/whatsapp/lp1/lp1.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Chat WhatsApp</title>
-	
+
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 	<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
 	<link rel="stylesheet" href="stylesheets/style.css">
-	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon"> 
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<script>
+		var googleTrakingId = 'UA-84653048-1';
+		var affiliateUrl = "http://www.github.com";
+
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+		ga('create', googleTrakingId, 'auto');
+		// ga('create', {trackingId: 'UA-84653048-1',cookieDomain: 'auto',name: 'lptracker',userId: '12345'});
+		ga('send', 'pageview');
+		ga('send', 'event', {
+			'eventCategory': 'LandingPage',
+			'eventAction': 'Visit',
+			'eventValue': 0.01
+		});
+	</script>
 </head>
+
 <body>
-<div>
-	<div class="container">
+	<div>
+		<div class="container">
 
-	<h1><span>(1)</span> WhatsApp  is Available!</h1>
-	
-	<p class="conutertop">You have <span id="counter1" class="greencolor">33</span> <span class="greencolor">seconds</span> to download</p>
-	
-	<img src="images/icoWhatsapp.png" alt="Ico WhatsApp" class="icoWhatsapp">
-	
-	<p class="step1"><span>Step <span class="numberbox">1</span></span> Click the Button Below </p>
-	
-	<p class="step2"><span>Step <span class="numberbox">2</span></span> Enter Your Phone Number. Then Enjoy Your Download! </p>
-	
-	<a href="#" class="btn">Download my WhatsApp Now!</a>
+			<h1><span>(1)</span> WhatsApp  is Available!</h1>
+
+			<p class="conutertop">You have <span id="counter1" class="greencolor">33</span> <span class="greencolor">seconds</span> to download</p>
+
+			<img src="images/icoWhatsapp.png" alt="Ico WhatsApp" class="icoWhatsapp">
+
+			<p class="step1"><span>Step <span class="numberbox">1</span></span> Click the Button Below </p>
+
+			<p class="step2"><span>Step <span class="numberbox">2</span></span> Enter Your Phone Number. Then Enjoy Your Download! </p>
+
+			<a href="#" class="btn" id="traclickBtn">Download my WhatsApp Now!</a>
+		</div>
 	</div>
-</div>
 
-<script type="text/javascript" src="javascripts/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="javascripts/custom.js"></script>
+	<script type="text/javascript" src="javascripts/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="javascripts/custom.js"></script>
+	<script>
+		$('#traclickBtn').click(function(event) {
+			event.preventDefault();
+			ga('send', 'event', 'link', 'click', affiliateUrl, {
+				nonInteraction: true
+			});
+			setTimeout(function() {
+				location.href = affiliateUrl;
+			}, 400);
+			return false;
+		})
+	</script>
+</body>
 
-</body></html>
+</html>
